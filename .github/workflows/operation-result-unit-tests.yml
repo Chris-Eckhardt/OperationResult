@@ -1,0 +1,35 @@
+name: OperationResult Unit Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'feature/**'
+      - dev
+      - develop
+
+defaults:
+  run:
+    working-directory: ./
+
+jobs:
+  integration-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Build and test # Do not build the whole solution to save time. Use the tests that work.
+        run: |
+          pushd Tests/OperationResult.Tests/ ; dotnet test --verbosity normal --configuration Release ; popd
+          
+      - name: Dump docker logs on failure
+        if: failure()
+        uses: jwalton/gh-docker-logs@v2
