@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\OperationResult\OperationResult.csproj" />
+    <ProjectReference Include="..\OperationResult\OperationResult.csproj" />
   </ItemGroup>
 
   <ItemGroup>
