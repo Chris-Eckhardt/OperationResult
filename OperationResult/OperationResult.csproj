@@ -5,6 +5,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>OperationResult</RootNamespace>
+	<Version>0.0.2</Version>
+    <Title>OperationResult</Title>
+    <Authors>Chris Eckhardt</Authors>
+    <Company>Beltfed</Company>
+    <Description>A utility library that provides methods and objects for supporting the Operation Result pattern.</Description>
+    <PackageProjectUrl>https://github.com/Chris-Eckhardt/OperationResult</PackageProjectUrl>
+    <PackageIcon>crow.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Chris-Eckhardt/OperationResult</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>operation result;</PackageTags>
   </PropertyGroup>
 
 </Project>
