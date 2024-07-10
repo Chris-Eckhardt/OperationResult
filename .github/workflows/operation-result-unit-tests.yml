@@ -28,7 +28,7 @@ jobs:
 
       - name: Build and test # Do not build the whole solution to save time. Use the tests that work.
         run: |
-          pushd Tests/OperationResult.Tests/ ; dotnet test --verbosity normal --configuration Release ; popd
+          pushd OperationResult.Tests/ ; dotnet test --verbosity normal --configuration Release ; popd
           
       - name: Dump docker logs on failure
         if: failure()
