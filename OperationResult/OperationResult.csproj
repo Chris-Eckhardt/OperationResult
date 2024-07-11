@@ -9,12 +9,13 @@
     <Title>OperationResult</Title>
     <Authors>Chris Eckhardt</Authors>
     <Company>Beltfed</Company>
-    <Description>A utility library that provides methods and objects for supporting the Operation Result pattern.</Description>
+    <PackageDescription>A utility library that provides methods and objects for supporting the Operation Result pattern.</PackageDescription>
     <PackageProjectUrl>https://github.com/Chris-Eckhardt/OperationResult</PackageProjectUrl>
-    <PackageIcon>crow.png</PackageIcon>
+    <PackageIcon></PackageIcon>
     <RepositoryUrl>https://github.com/Chris-Eckhardt/OperationResult</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>operation result;</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
