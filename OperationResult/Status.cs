@@ -1,24 +1,30 @@
 ﻿namespace OperationResult;
 
+[GenerateSerializer]
+[Alias("OperationResult.Status`1")]
 public readonly struct Status<TError>
 {
-    public readonly TError Error;
-
     private static readonly Status<TError> SuccessStatus = new(isSuccess: true);
 
-    public readonly bool IsSuccess { get; }
+    [Id(0)]
+    public readonly bool IsSuccess;
+    [Id(1)]
+    public readonly bool IsError;
 
-    public bool IsError => !IsSuccess;
+    [Id(2)]
+    public readonly TError Error;
 
     private Status(bool isSuccess)
     {
         IsSuccess = isSuccess;
+        IsError = !isSuccess;
         Error = default!;
     }
 
     private Status(TError error)
     {
         IsSuccess = false;
+        IsError = true;
         Error = error;
     }
 
@@ -27,7 +33,7 @@ public readonly struct Status<TError>
         return status.IsSuccess;
     }
 
-    public static implicit operator Status<TError>(SuccessTag tag)
+    public static implicit operator Status<TError>(SuccessTag _)
     {
         return SuccessStatus;
     }

@@ -10,8 +10,8 @@ internal class TestMethods
     public static Result<ValueType, ValueType> ResultComplexValueType(bool failure) 
         => failure ? Error(new ValueType()) : Ok(new ValueType());
 
-    public static Result<RefereceType, RefereceType> ResultReferenceType(bool failure)
-        => failure ? Error(new RefereceType()) : Ok(new RefereceType());
+    public static Result<ReferenceType, ReferenceType> ResultReferenceType(bool failure)
+        => failure ? Error(new ReferenceType()) : Ok(new ReferenceType());
 
     public static Status<ValueType> StatusComplexValueType(bool failure)
         => failure ? Error(new ValueType()) : Ok();
@@ -19,19 +19,19 @@ internal class TestMethods
     public static Status<int> StatusSimpleValueType(bool failure)
         => failure ? Error(-1) : Ok();
 
-    public static Status<RefereceType> StatusReferenceType(bool failure)
-        => failure ? Error(new RefereceType()) : Ok();
+    public static Status<ReferenceType> StatusReferenceType(bool failure)
+        => failure ? Error(new ReferenceType()) : Ok();
 }
 
-internal class RefereceType
+internal class ReferenceType
 {
     public int Value;
     public string Str;
 
-    public RefereceType()
+    public ReferenceType()
     {
         Value = 42;
-        Str = "Fourty Two";
+        Str = "Forty Two";
     }
 }
 
@@ -43,6 +43,6 @@ internal struct ValueType
     public ValueType()
     {
         Value = 42;
-        Str = "Fourty Two";
+        Str = "Forty Two";
     }
 }
