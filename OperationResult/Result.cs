@@ -1,18 +1,25 @@
 ﻿namespace OperationResult;
 
+[GenerateSerializer]
+[Alias("OperationResult.Result`2")]
 public readonly struct Result<TResult, TError>
 {
+    [Id(0)]
+    public readonly bool IsSuccess;
+
+    [Id(1)]
+    public readonly bool IsError;
+
+    [Id(2)]
     public readonly TResult Value;
 
+    [Id(3)]
     public readonly TError Error;
-
-    public bool IsSuccess { get; }
-
-    public bool IsError => !IsSuccess;
 
     private Result(TResult result)
     {
         IsSuccess = true;
+        IsError = false;
         Value = result;
         Error = default!;
     }
@@ -20,6 +27,7 @@ public readonly struct Result<TResult, TError>
     private Result(TError error)
     {
         IsSuccess = false;
+        IsError = true;
         Value = default!;
         Error = error;
     }

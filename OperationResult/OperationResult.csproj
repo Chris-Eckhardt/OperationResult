@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>OperationResult</RootNamespace>
-	<Version>0.0.1</Version>
+	  <Version>1.1.0</Version>
     <Title>OperationResult</Title>
     <Authors>Chris Eckhardt</Authors>
     <Company>Beltfed</Company>
@@ -17,5 +17,9 @@
     <PackageTags>operation result;</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Orleans.Sdk" Version="8.2.0" />
+  </ItemGroup>
 
 </Project>

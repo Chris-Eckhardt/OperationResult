@@ -33,7 +33,7 @@ public class ResultObject
     }
 
     /// <summary>
-    /// An object representing an operation that completed unuccessfully with an error.
+    /// An object representing an operation that completed unsuccessfully with an error.
     /// </summary>
     /// <typeparam name="TError"></typeparam>
     /// <param name="error"></param>
